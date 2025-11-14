@@ -20,8 +20,6 @@ See [examples/](/examples) for concrete examples.
 ```hcl
 module "sns_to_slack" {
   source = "github.com/builtinnya/aws-sns-slack-terraform/module"
-  # Or use the following source if your Terraform version >= 0.12
-  # source = "github.com/builtinnya/aws-sns-slack-terraform/module-v0.12"
 
   slack_webhook_url = "https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
   slack_channel_map = {
@@ -81,8 +79,6 @@ resource "aws_sns_topic_subscription" "lambda_sns_to_slack" {
 
 The minimal example is located at [examples/minimal](/examples/minimal).
 It builds no extra AWS resources except a CloudWatch alarm for AWS Lambda's duration metric.
-
->NOTE: for terraform >= 0.12, see [examples/minimal-v0.12](/examples/minimal-v0.12) instead.
 
 #### Building steps
 
